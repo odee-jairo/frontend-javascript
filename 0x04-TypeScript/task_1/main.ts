@@ -7,13 +7,6 @@ interface Teacher {
     contract: any;
 }
 
-const teacher1: Teacher = {
-    firstName: "Steve",
-    lastName: "Kimani",
-    fullTimeEmployee: true,
-    yearsOfExperience: 10,
-    location: "Nairobi",
-    contract: false
+interface Directors extends Teacher {
+    numberOfReports: number;
 }
-
-console.log(teacher1);
