@@ -45,3 +45,27 @@
       return new Director();
     }
   }
+
+  function isDirector(employee: Teacher | Director): employee is Director {
+    return (employee as Director).workDirectorTasks !== undefined;
+  }
+
+  function executeWork(employee: Teacher | Director): string {
+    if (isDirector(employee)) {
+      return employee.workDirectorTasks();
+    } else {
+      return employee.workTeacherTasks();
+    }
+  }
+
+  // Step 1: String literal type
+type Subjects = "Math" | "History";
+
+// Step 2: Function to teach the class
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === "Math") {
+    return "Teaching Math";
+  } else {
+    return "Teaching History";
+  }
+}
